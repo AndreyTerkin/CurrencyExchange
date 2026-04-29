@@ -1,0 +1,13 @@
+<Solution>
+  <Folder Name="/FinanceService/">
+    <Project Path="FinanceService/FinanceService.Tests/FinanceService.Tests.csproj" />
+    <Project Path="FinanceService/FinanceService/FinanceService.csproj" />
+  </Folder>
+  <Folder Name="/UserService/">
+    <Project Path="UserService/UserService.Tests/UserService.Tests.csproj" />
+    <Project Path="UserService/UserService/UserService.csproj" />
+  </Folder>
+  <Project Path="ApiGateway/ApiGateway.csproj" />
+  <Project Path="CurrencyWorker/CurrencyWorker.csproj" />
+  <Project Path="DbMigrator/DbMigrator.csproj" />
+</Solution>
