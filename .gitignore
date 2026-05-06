@@ -67,4 +67,3 @@ docker-compose.override.yml
 
 ## Temp / task files (remove from .gitignore before final commit)
 plan.txt
-*.pdf
