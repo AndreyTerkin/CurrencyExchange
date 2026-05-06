@@ -60,4 +60,21 @@ public class LoginUserCommandHandlerTests
         await act.Should().ThrowAsync<ValidationException>()
             .WithMessage("Invalid credentials.");
     }
+
+    [Fact]
+    public async Task Handle_WithNonExistentUser_ThrowsValidationException()
+    {
+        // Arrange
+        _repoMock.Setup(r => r.GetByNameAsync("unknown", It.IsAny<CancellationToken>()))
+            .ReturnsAsync((User?)null);
+
+        var command = new LoginUserCommand("unknown", "password123");
+
+        // Act
+        Func<Task> act = () => _handler.Handle(command, CancellationToken.None);
+
+        // Assert
+        await act.Should().ThrowAsync<ValidationException>()
+            .WithMessage("Invalid credentials.");
+    }
 }
