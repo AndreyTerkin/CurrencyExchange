@@ -55,9 +55,9 @@ public class CbrXmlParser(
             ?? throw new InvalidOperationException("Cbr:Url is not configured.");
 
         HttpClient client = httpClientFactory.CreateClient("cbr");
-        string xml = await client.GetStringAsync(url, ct);
-
-        XDocument doc = XDocument.Parse(xml);
+        byte[] bytes = await client.GetByteArrayAsync(url, ct);
+        using var stream = new MemoryStream(bytes);
+        XDocument doc = XDocument.Load(stream);
 
         var validationErrors = new List<string>();
         doc.Validate(SchemaSet, (_, e) => validationErrors.Add(e.Message));

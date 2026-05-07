@@ -1,6 +1,9 @@
+using System.Text;
 using CurrencyWorker;
 using CurrencyWorker.Persistence;
 using Microsoft.EntityFrameworkCore;
+
+Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
 
 var builder = Host.CreateApplicationBuilder(args);
 
