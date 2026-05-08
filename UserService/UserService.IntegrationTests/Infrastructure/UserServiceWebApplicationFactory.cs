@@ -1,3 +1,5 @@
+using System.Globalization;
+using FluentValidation;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.EntityFrameworkCore;
@@ -34,6 +36,8 @@ public class UserServiceWebApplicationFactory : WebApplicationFactory<Program>, 
 
     async Task IAsyncLifetime.InitializeAsync()
     {
+        ValidatorOptions.Global.LanguageManager.Culture = new CultureInfo("en-US");
+
         await _postgres.StartAsync();
         await _redis.StartAsync();
 
