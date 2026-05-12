@@ -7,7 +7,7 @@ namespace FinanceService.Infrastructure.Persistence;
 public class FinanceDbContext(DbContextOptions<FinanceDbContext> options) : DbContext(options)
 {
     public DbSet<Currency> Currencies => Set<Currency>();
-    internal DbSet<UserFavoriteCurrencyEntity> UserFavoriteCurrencies => Set<UserFavoriteCurrencyEntity>();
+    public DbSet<UserFavoriteCurrency> UserFavoriteCurrencies => Set<UserFavoriteCurrency>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
