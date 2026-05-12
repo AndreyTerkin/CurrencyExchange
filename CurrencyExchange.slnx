@@ -1,5 +1,6 @@
 <Solution>
   <Folder Name="/FinanceService/">
+    <Project Path="FinanceService/FinanceService.IntegrationTests/FinanceService.IntegrationTests.csproj" />
     <Project Path="FinanceService/FinanceService.Tests/FinanceService.Tests.csproj" />
     <Project Path="FinanceService/FinanceService/FinanceService.csproj" />
   </Folder>
